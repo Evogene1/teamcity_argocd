@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: kek-project-dev-apps
+  namespace: argocd
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/Evogene1/teamcity_argocd
+      revision: main
+      directories:
+      - path: apps/overlays/dev/kek-project/*
+  template:
+    metadata:
+      name: '{{path.basename}}-dev'
+      labels:
+        project: kek-project
+        env: dev
+    spec:
+      project: kek-project
+      source:
+        repoURL: https://github.com/Evogene1/teamcity_argocd
+        targetRevision: main
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: service
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
