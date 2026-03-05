@@ -6,7 +6,11 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
   labels:
-    project: kek-project
+    app.kubernetes.io/name: kek-app
+    app.kubernetes.io/instance: kek-app-dev
+    app.kubernetes.io/part-of: kek-project
+    app.kubernetes.io/managed-by: argocd
+    environment: dev
     version: "1.0.2"
 spec:
   project: kek-project
