@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../../base/kek-app
+images:
+  - name: gen921/hw07
+    newTag: "1.0.1"
