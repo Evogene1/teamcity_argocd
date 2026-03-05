@@ -3,7 +3,10 @@ kind: Kustomization
 namespace: service
 
 resources:
-  - ../../../../base/kek-app
+  - ../../../../base/kek-app/deployment.yml
+  - ../../../../base/kek-app/service.yml
+  - ../../../../base/kek-app/ingress.yml
 
 patches:
   - path: deployment-patch.yml
+  - path: ingress-patch.yml

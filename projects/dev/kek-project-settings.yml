@@ -1,4 +1,4 @@
-apiVersion: argoproj.io/v1alpha1
+apiVersion: argocd.argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: kek-project
