@@ -6,3 +6,4 @@ resources:
 images:
   - name: gen921/hw07
     newTag: "1.0.1"
+  - deployment-kek-app.yml

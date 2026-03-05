@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kek-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kek-app
+  template:
+    metadata:
+      labels:
+        app: kek-app
+    spec:
+      containers:
+      - name: kek-app
+        image: gen921/hw07:1.0.1
+        env:
+
