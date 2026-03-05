@@ -2,18 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kek-app
-  namespace: service
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: kek-app
-      project: KEK-PROJECT
   template:
     metadata:
       labels:
         app: kek-app
-        project: KEK-PROJECT
     spec:
       containers:
       - name: kek-app
