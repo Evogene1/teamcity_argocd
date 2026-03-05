@@ -1,3 +1,0 @@
-kustomize:
-  images:
-  - gen921/hw07:1.0.3
