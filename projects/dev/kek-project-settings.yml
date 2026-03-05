@@ -3,8 +3,10 @@ kind: AppProject
 metadata:
   name: kek-project
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
-  description: "Project for kek-project"
+  description: "Project for kek-project management"
   sourceRepos:
   - "*"
   destinations:

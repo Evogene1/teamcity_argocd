@@ -3,11 +3,13 @@ kind: Application
 metadata:
   name: kek-app-dev
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   labels:
     project: kek-project
     version: "1.0.2"
 spec:
-  project: kek-project # ?????????????? ??? ?????? ??????? default
+  project: kek-project
   source:
     repoURL: 'https://github.com/Evogene1/teamcity_argocd.git'
     targetRevision: main
