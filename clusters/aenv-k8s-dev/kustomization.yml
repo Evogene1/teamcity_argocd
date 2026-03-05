@@ -4,5 +4,5 @@ kind: Kustomization
 resources:
   # Ссылаемся на оверлей инфраструктуры, который создаст ApplicationSet
   - ../../infrastructure/overlays/dev
-#  - ../../apps/overlays/de
+#  - ../../apps/overlays/dev
   - ../../projects/dev
