@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/Evogene1/teamcity_argocd.git' # Перевір чи URL вірний (був test-argocd)
     targetRevision: main
-    path: projects/dev  # !!! ОСЬ ЦЕ ТРЕБА ЗМІНИТИ
+    path: argocd  # !!! ОСЬ ЦЕ ТРЕБА ЗМІНИТИ
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd

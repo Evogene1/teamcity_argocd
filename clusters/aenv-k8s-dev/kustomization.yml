@@ -5,4 +5,4 @@ resources:
   # Ссылаемся на оверлей инфраструктуры, который создаст ApplicationSet
   - ../../infrastructure/overlays/dev
 #  - ../../apps/overlays/dev
-  - ../../projects/dev
+  - ../../argocd
