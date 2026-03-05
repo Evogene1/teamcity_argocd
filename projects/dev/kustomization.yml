@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - KEK-PROJECT.yml
   - kek-project.yml
+  - kek-project.yml
