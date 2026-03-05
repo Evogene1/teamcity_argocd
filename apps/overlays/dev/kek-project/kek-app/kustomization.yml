@@ -3,7 +3,4 @@ kind: Kustomization
 namespace: service
 resources:
   - ../../../../base/kek-app
-images:
-  - name: gen921/hw07
-    newTag: "1.0.1"
-  - deployment-kek-app.yml
+  - deployment-patch.yml

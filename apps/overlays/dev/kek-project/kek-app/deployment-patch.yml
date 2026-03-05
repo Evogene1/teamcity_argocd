@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kek-app
+spec:
+  template:
+    spec:
+      containers:
+      - name: kek-app
+        image: gen921/hw07:1.0.2
+        env:
+        - name: KEK
+          value: "LOL"
