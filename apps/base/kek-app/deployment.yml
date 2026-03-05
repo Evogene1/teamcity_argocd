@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: kek-app
-        image: docker.io/company/my-app
+        image: gen921/hw07
         ports:
         - containerPort: 8080
