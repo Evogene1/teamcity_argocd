@@ -6,13 +6,13 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/Evogene1/test-argocd.git'
+    repoURL: 'https://github.com/Evogene1/teamcity_argocd.git' # Перевір чи URL вірний (був test-argocd)
     targetRevision: main
-    path: apps/overlays/dev  # Указываем папку, где лежат *.yml файлы Application
+    path: projects/dev  # !!! ОСЬ ЦЕ ТРЕБА ЗМІНИТИ
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
   syncPolicy:
     automated:
       prune: true
-      selfHeal: false
+      selfHeal: true
