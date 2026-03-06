@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: billing-service
+spec:
+  template:
+    spec:
+      containers:
+      - name: billing-service
+        image: gen921/hw07:1.0.2
+        env:
+        - name: KEK
+          value: "LOL"
+

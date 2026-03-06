@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: billing-proj-dev-apps
+  namespace: argocd
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/Evogene1/teamcity_argocd
+      revision: main
+      directories:
+      - path: apps/overlays/dev/billing-proj/*
+  template:
+    metadata:
+      name: '{{path.basename}}-dev'
+      labels:
+        project: billing-proj
+        env: dev
+    spec:
+      project: billing-proj
+      source:
+        repoURL: https://github.com/Evogene1/teamcity_argocd
+        targetRevision: main
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: billing-ns
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
