@@ -5,25 +5,31 @@ metadata:
   namespace: argocd
 spec:
   generators:
-    - matrix:
-        generators:
-          - git:
-              repoURL: https://github.com/Evogene1/teamcity_argocd
-              revision: main
-              directories:
-                - path: apps/overlays/dev/billing-proj/*
-          - git:
-              repoURL: https://github.com/Evogene1/teamcity_argocd
-              revision: main
-              files:
-                - path: "{{path}}/version.json"
+  - git:
+      repoURL: https://github.com/Evogene1/teamcity_argocd
+      revision: main
+      directories:
+      - path: apps/overlays/dev/billing-proj/*
+  # ??????? ??? ????: ??? ???????? ????? json ??????
+  - matrix:
+      generators:
+        - git:
+            repoURL: https://github.com/Evogene1/teamcity_argocd
+            revision: main
+            directories:
+              - path: apps/overlays/dev/billing-proj/*
+        - git:
+            repoURL: https://github.com/Evogene1/teamcity_argocd
+            revision: main
+            files:
+              - path: "{{path}}/version.json"
   template:
     metadata:
       name: '{{path.basename}}-dev'
       labels:
         project: billing-proj
         env: dev
-        # Тепер тут буде версія саме з того version.json, що лежить у папці сервісу
+        # ????? ??? ????????? ???? ? ?????? ?????:
         version: "{{app_version}}"
     spec:
       project: billing-proj
