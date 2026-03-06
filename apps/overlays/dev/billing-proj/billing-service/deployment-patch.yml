@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - name: billing-service
-        image: rabbitmq:4.2.4
+        image: gen921/hw07:1.0.2
         env:
         - name: KEK
           value: "LOL"
