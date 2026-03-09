@@ -1,10 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: billing-service
+  name: generic-service
 spec:
-  selector:
-    app: billing-service
+  type: ClusterIP
   ports:
   - port: 80
     targetPort: 8080
+  selector:
+    app: generic-app

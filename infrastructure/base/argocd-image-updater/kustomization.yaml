@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - values.yaml
+  - argocd/argocd-rbac.yml

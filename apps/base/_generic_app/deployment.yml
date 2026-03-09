@@ -1,19 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kek-app
+  name: generic-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kek-app
+      app: generic-app
   template:
     metadata:
       labels:
-        app: kek-app
+        app: generic-app
     spec:
       containers:
-      - name: kek-app
-        image: gen921/hw07
-        ports:
-        - containerPort: 8080
+      - name: main-container
+        image: placeholder:latest
